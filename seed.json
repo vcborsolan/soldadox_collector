@@ -1,0 +1,146 @@
+[
+    [
+        {
+            "initials": "SP" ,
+            "name": "São Paulo" ,
+            "url": "https://sp.olx.com.br/"
+        },
+        {
+            "initials": "RJ" ,
+            "name": "Rio de Janeiro" ,
+            "url": "https://rj.olx.com.br/"
+        },
+        {
+            "initials": "MG" ,
+            "name": "Minas Gerais" ,
+            "url": "https://mg.olx.com.br/"
+        },
+        {
+            "initials": "PR" ,
+            "name": "Paraná" ,
+            "url": "https://pr.olx.com.br/"
+        },
+        {
+            "initials": "RS" ,
+            "name": "Rio Grande do Sul" ,
+            "url": "https://rs.olx.com.br/"
+        },
+        {
+            "initials": "ES" ,
+            "name": "Espirito Santo" ,
+            "url": "https://es.olx.com.br/"
+        },
+        {
+            "initials": "BA" ,
+            "name": "Bahia" ,
+            "url": "https://ba.olx.com.br/"
+        },
+        {
+            "initials": "PE" ,
+            "name": "Pernanbuco" ,
+            "url": "https://pe.olx.com.br/"
+        },
+        {
+            "initials": "df" ,
+            "name": "Distrito Federal" ,
+            "url": "https://df.olx.com.br/"
+        },
+        {
+            "initials": "CE" ,
+            "name": "Ceará" ,
+            "url": "https://ce.olx.com.br/"
+        },
+        {
+            "initials": "MS" ,
+            "name": "Mato Grosso do Sul" ,
+            "url": "https://ms.olx.com.br/"
+        },
+        {
+            "initials": "GO" ,
+            "name": "Goiás" ,
+            "url": "https://go.olx.com.br/"
+        },
+        {
+            "initials": "am" ,
+            "name": "Amazonas" ,
+            "url": "https://am.olx.com.br/"
+        },
+        {
+            "initials": "RN" ,
+            "name": "Rio Grande do Norte" ,
+            "url": "https://rn.olx.com.br/"
+        },
+        {
+            "initials": "PB" ,
+            "name": "Paraíba" ,
+            "url": "https://pb.olx.com.br/"
+        },
+        {
+            "initials": "PA" ,
+            "name": "Pará" ,
+            "url": "https://pa.olx.com.br/"
+        },
+        {
+            "initials": "MT" ,
+            "name": "Mato Grosso" ,
+            "url": "https://mt.olx.com.br/"
+        },
+        {
+            "initials": "AL" ,
+            "name": "Alagoas" ,
+            "url": "https://al.olx.com.br/"
+        },
+        {
+            "initials": "SE" ,
+            "name": "Sergipe" ,
+            "url": "https://se.olx.com.br/"
+        },
+        {
+            "initials": "MA" ,
+            "name": "Maranhão" ,
+            "url": "https://ma.olx.com.br/"
+        },
+        {
+            "initials": "AC" ,
+            "name": "Acre" ,
+            "url": "https://ac.olx.com.br/"
+        },
+        {
+            "initials": "RO" ,
+            "name": "Rondônia" ,
+            "url": "https://ro.olx.com.br/"
+        },
+        {
+            "initials": "TO" ,
+            "name": "Tocantins" ,
+            "url": "https://to.olx.com.br/"
+        },
+        {
+            "initials": "PI" ,
+            "name": "Piauí" ,
+            "url": "https://pi.olx.com.br/"
+        },
+        {
+            "initials": "AP" ,
+            "name": "Amapá" ,
+            "url": "https://ap.olx.com.br/"
+        },
+        {
+            "initials": "RR" ,
+            "name": "Roraima" ,
+            "url": "https://rr.olx.com.br/"
+        },
+        {
+            "initials": "SC" ,
+            "name": "Santa Catarina" ,
+            "url": "https://sc.olx.com.br/"
+        }
+    ],
+    [
+        {
+            "name": "TESTE" ,
+			"state_id": 1 ,
+			"url": "TESTE"
+        }
+    ]
+]

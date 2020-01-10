@@ -8,34 +8,7 @@ class Crawler:
 
         self.loop = True
         self.ads = []
-        self.state_ok = {
-            "sp": "https://sp.olx.com.br/" ,
-            "rj": "https://rj.olx.com.br/" ,
-            "mg": "https://mg.olx.com.br/" ,
-            "pr": "https://pr.olx.com.br/" ,
-            "rs": "https://rs.olx.com.br/" ,
-            "es": "https://es.olx.com.br/" ,
-            "ba": "https://ba.olx.com.br/" ,
-            "pe": "https://pe.olx.com.br/" ,
-            "df": "https://df.olx.com.br/" ,
-            "ce": "https://ce.olx.com.br/" ,
-            "ms": "https://ms.olx.com.br/" ,
-            "go": "https://go.olx.com.br/" ,
-            "am": "https://am.olx.com.br/" ,
-            "rn": "https://rn.olx.com.br/" ,
-            "pb": "https://pb.olx.com.br/" ,
-            "pa": "https://pa.olx.com.br/" ,
-            "mt": "https://mt.olx.com.br/" ,
-            "al": "https://al.olx.com.br/" ,
-            "se": "https://se.olx.com.br/" ,
-            "ma": "https://ma.olx.com.br/" ,
-            "ac": "https://ac.olx.com.br/" ,
-            "ro": "https://ro.olx.com.br/" ,
-            "to": "https://to.olx.com.br/" ,
-            "pi": "https://pi.olx.com.br/" ,
-            "ap": "https://ap.olx.com.br/" ,
-            "rr": "https://rr.olx.com.br/" ,
-        }.get(state.lower() , "https://olx.com.br/")
+        self.state_ok = {"Aqui é resultado de uma query"       }.get(state.lower() , "https://olx.com.br/")
         self.url_ini = f"{self.state_ok}{ddd}{region}"
 
     def status(self , url , redirect=False):

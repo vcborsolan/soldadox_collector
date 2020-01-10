@@ -11,7 +11,7 @@ def configure(app):
 class State(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     initials = db.Column(db.String(2))
-    name = db.Column(db.String(15))
+    name = db.Column(db.String(20))
     ddds = db.relationship('Ddd' , backref='state')
     url = db.Column(db.String(255))
 
