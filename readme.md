@@ -4,6 +4,7 @@
 ```sh
 pipenv install requests beautifulsoup4 flask flask-sqlalchemy flask-migrate flask-marshmallow marshmallow-sqlalchemy
 export FLASK_APP=App
+export FLASK_ENV=development
 ```
 
 

@@ -138,9 +138,302 @@
     ],
     [
         {
-            "name": "TESTE" ,
-			"state_id": 1 ,
-			"url": "TESTE"
+			"name": "DDD 11 - São Paulo e região",
+			"url": "https://sp.olx.com.br/sao-paulo-e-regiao",
+			"state_id": 1
+		},
+		{
+			"name": "DDD 12 - V. do Paraíba e Litoral Norte",
+			"url": "https://sp.olx.com.br/vale-do-paraiba-e-litoral-norte",
+			"state_id": 1
+		},
+		{
+			"name": "DDD 13 - Baixada Santista e Litoral Sul",
+			"url": "https://sp.olx.com.br/baixada-santista-e-litoral-sul",
+			"state_id": 1
+		},
+		{
+			"name": "DDD 14 - Bauru, Marília e região",
+			"url": "https://sp.olx.com.br/regiao-de-bauru-e-marilia",
+			"state_id": 1
+		},
+		{
+			"name": "DDD 15 - Sorocaba e região",
+			"url": "https://sp.olx.com.br/regiao-de-sorocaba",
+			"state_id": 1
+		},
+		{
+			"name": "DDD 16 - Ribeirão Preto e região",
+			"url": "https://sp.olx.com.br/regiao-de-ribeirao-preto",
+			"state_id": 1
+		},
+		{
+			"name": "DDD 17 - S. José do Rio Preto e região",
+			"url": "https://sp.olx.com.br/regiao-de-sao-jose-do-rio-preto",
+			"state_id": 1
+		},
+		{
+			"name": "DDD 18 - Presidente Prudente e região",
+			"url": "https://sp.olx.com.br/regiao-de-presidente-prudente",
+			"state_id": 1
+		},
+		{
+			"name": "DDD 19 - Grande Campinas",
+			"url": "https://sp.olx.com.br/grande-campinas",
+			"state_id": 1
+		}
+    ],
+    [
+    	{
+            "name": "Centro" ,
+            "url": "https://sp.olx.com.br/sao-paulo-e-regiao/centro",
+            "ddd_id": 1
+
+        },
+        {
+            "name": "Zona Leste" ,
+            "url": "https://sp.olx.com.br/sao-paulo-e-regiao/zona-leste",
+            "ddd_id": 1
+
+        },
+        {
+            "name": "Zona Norte" ,
+            "url": "https://sp.olx.com.br/sao-paulo-e-regiao/zona-norte",
+            "ddd_id": 1
+
+        },
+        {
+            "name": "Zona Oeste" ,
+            "url": "https://sp.olx.com.br/sao-paulo-e-regiao/zona-oeste",
+            "ddd_id": 1
+
+        },
+        {
+            "name": "Zona Sul" ,
+            "url": "https://sp.olx.com.br/sao-paulo-e-regiao/zona-sul",
+            "ddd_id": 1
+
+        },
+        {
+            "name": "ABCD" ,
+            "url": "https://sp.olx.com.br/sao-paulo-e-regiao/abcd",
+            "ddd_id": 1
+
+        },
+        {
+            "name": "Alphaville e Tamboré" ,
+            "url": "https://sp.olx.com.br/sao-paulo-e-regiao/alphaville-e-tambore",
+            "ddd_id": 1
+
+        },
+        {
+            "name": "https://sp.olx.com.br/sao-paulo-e-regiao/outras-cidades" ,
+            "url": "Outras cidades",
+            "ddd_id": 1
+
+        },
+        {
+            "name": "Região de Bragança" ,
+            "url": "https://sp.olx.com.br/sao-paulo-e-regiao/regiao-de-braganca",
+            "ddd_id": 1
+
+        },
+        {
+            "name": "Região de Jundiaí" ,
+            "url": "https://sp.olx.com.br/sao-paulo-e-regiao/regiao-de-jundiai",
+            "ddd_id": 1
+
+        },
+        {
+            "name": "https://sp.olx.com.br/sao-paulo-e-regiao/interior" ,
+            "url": "Interior",
+            "ddd_id": 1
+
+        },
+        {
+            "name": "Litoral Norte" ,
+            "url": "https://sp.olx.com.br/vale-do-paraiba-e-litoral-norte/litoral-norte",
+            "ddd_id": 2
+        },
+        {
+            "name": "Região de Campos do Jordão" ,
+            "url": "https://sp.olx.com.br/vale-do-paraiba-e-litoral-norte/regiao-de-campos-do-jordao",
+            "ddd_id": 2
+        },
+        {
+            "name": "Vale do Paraíba" ,
+            "url": "https://sp.olx.com.br/vale-do-paraiba-e-litoral-norte/vale-do-paraiba",
+            "ddd_id": 2
+        },
+        {
+            "name": "Litoral Sul" ,
+            "url": "https://sp.olx.com.br/baixada-santista-e-litoral-sul/litoral-sul",
+            "ddd_id": 3
+        },
+        {
+            "name": "Região de Santos" ,
+            "url": "https://sp.olx.com.br/baixada-santista-e-litoral-sul/regiao-de-santos",
+            "ddd_id": 3
+        },
+        {
+            "name": "Outras cidades" ,
+            "url": "https://sp.olx.com.br/baixada-santista-e-litoral-sul/outras-cidades",
+            "ddd_id": 3
+        },
+        {
+            "name": "Região de Avaré" ,
+            "url": "https://sp.olx.com.br/regiao-de-bauru-e-marilia/regiao-de-avare",
+            "ddd_id": 4
+        },
+        {
+            "name": "Região de Bauru" ,
+            "url": "https://sp.olx.com.br/regiao-de-bauru-e-marilia/regiao-de-bauru",
+            "ddd_id": 4
+        },
+        {
+            "name": "Região de Botucatu" ,
+            "url": "https://sp.olx.com.br/regiao-de-bauru-e-marilia/regiao-de-botucatu",
+            "ddd_id": 4
+        },
+        {
+            "name": "Região de Jaú" ,
+            "url": "https://sp.olx.com.br/regiao-de-bauru-e-marilia/regiao-de-jau",
+            "ddd_id": 4
+        },
+        {
+            "name": "Região de Lins" ,
+            "url": "https://sp.olx.com.br/regiao-de-bauru-e-marilia/regiao-de-lins",
+            "ddd_id": 4
+        },
+        {
+            "name": "Região de Marília" ,
+            "url": "https://sp.olx.com.br/regiao-de-bauru-e-marilia/regiao-de-marilia",
+            "ddd_id": 4
+        },
+        {
+            "name": "Região de Ourinhos" ,
+            "url": "https://sp.olx.com.br/regiao-de-bauru-e-marilia/regiao-de-ourinhos",
+            "ddd_id": 4
+        },
+        {
+            "name": "Região de Capão Bonito" ,
+            "url": "https://sp.olx.com.br/regiao-de-sorocaba/regiao-de-capao-bonito",
+            "ddd_id": 5
+        },
+        {
+            "name": "Região de Itapetininga" ,
+            "url": "https://sp.olx.com.br/regiao-de-sorocaba/regiao-de-itapetininga",
+            "ddd_id": 5
+        },
+        {
+            "name": "Região de Itapeva" ,
+            "url": "https://sp.olx.com.br/regiao-de-sorocaba/regiao-de-itapeva",
+            "ddd_id": 5
+        },
+        {
+            "name": "Região de Piedade e Ibiúna" ,
+            "url": "https://sp.olx.com.br/regiao-de-sorocaba/regiao-de-piedade-e-ibiuna",
+            "ddd_id": 5
+        },
+        {
+            "name": "Região de Sorocaba" ,
+            "url": "https://sp.olx.com.br/regiao-de-sorocaba/regiao-de-sorocaba",
+            "ddd_id": 5
+        },
+        {
+            "name": "Região de Tatuí" ,
+            "url": "https://sp.olx.com.br/regiao-de-sorocaba/regiao-de-tatui",
+            "ddd_id": 5
+        },
+        {
+            "name": "Região de Araraquara" ,
+            "url": "https://sp.olx.com.br/regiao-de-ribeirao-preto/regiao-de-araraquara",
+            "ddd_id": 6
+        },
+        {
+            "name": "Região de Franca" ,
+            "url": "https://sp.olx.com.br/regiao-de-ribeirao-preto/regiao-de-franca",
+            "ddd_id": 6
+        },
+        {
+            "name": "Região de Jaboticabal" ,
+            "url": "https://sp.olx.com.br/regiao-de-ribeirao-preto/regiao-de-jaboticabal",
+            "ddd_id": 6
+        },
+        {
+            "name": "Região de Ribeirão Preto" ,
+            "url": "https://sp.olx.com.br/regiao-de-ribeirao-preto/regiao-de-ribeirao-preto",
+            "ddd_id": 6
+        },
+        {
+            "name": "Região de São Carlos" ,
+            "url": "https://sp.olx.com.br/regiao-de-ribeirao-preto/regiao-de-sao-carlos",
+            "ddd_id": 6
+        },
+        {
+            "name": "Região de Barretos" ,
+            "url": "https://sp.olx.com.br/regiao-de-sao-jose-do-rio-preto/regiao-de-barretos",
+            "ddd_id": 7
+        },
+        {
+            "name": "Região de Catanduva" ,
+            "url": "https://sp.olx.com.br/regiao-de-sao-jose-do-rio-preto/regiao-de-catanduva",
+            "ddd_id": 7
+        },
+        {
+            "name": "Região de Jales e Votuporanga" ,
+            "url": "https://sp.olx.com.br/regiao-de-sao-jose-do-rio-preto/regiao-de-jales-e-votuporanga",
+            "ddd_id": 7
+        },
+        {
+            "name": "Região de São José do Rio Preto" ,
+            "url": "https://sp.olx.com.br/regiao-de-sao-jose-do-rio-preto/regiao-de-sao-jose-do-rio-preto",
+            "ddd_id": 7
+        },
+        {
+            "name": "Região de Adamantina e Dracena" ,
+            "url": "https://sp.olx.com.br/regiao-de-presidente-prudente/regiao-de-adamantina-e-dracena",
+            "ddd_id": 8
+        },
+        {
+            "name": "Região de Araçatuba" ,
+            "url": "https://sp.olx.com.br/regiao-de-presidente-prudente/regiao-de-aracatuba",
+            "ddd_id": 8
+        },
+        {
+            "name": "Região de Assis" ,
+            "url": "https://sp.olx.com.br/regiao-de-presidente-prudente/regiao-de-assis",
+            "ddd_id": 8
+        },
+        {
+            "name": "Pres. Prudente, Araçatuba e região" ,
+            "url": "https://sp.olx.com.br/regiao-de-presidente-prudente/pres-prudente-aracatuba-e-regiao",
+            "ddd_id": 8
+        },
+        {
+            "name": "Região de Campinas" ,
+            "url": "https://sp.olx.com.br/grande-campinas/regiao-de-campinas",
+            "ddd_id": 9
+        },
+        {
+            "name": "Região de Limeira" ,
+            "url": "https://sp.olx.com.br/grande-campinas/regiao-de-limeira",
+            "ddd_id": 9
+        },
+        {
+            "name": "Mogi Mirin e Pirrassununga" ,
+            "url": "https://sp.olx.com.br/grande-campinas/mogi-mirin-e-pirrassununga",
+            "ddd_id": 9
+        },
+        {
+            "name": "Região de Piracicaba" ,
+            "url": "https://sp.olx.com.br/grande-campinas/regiao-de-piracicaba",
+            "ddd_id": 9
+        },
+        {
+            "name": "Região de Rio Claro" ,
+            "url": "https://sp.olx.com.br/grande-campinas/regiao-de-rio-claro",
+            "ddd_id": 9
         }
-    ]
+   	]
 ]
