@@ -8,6 +8,7 @@ def create_app():
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://///home/victor/crawler_olx/test.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['JSON_AS_ASCII'] = False
     config_db(app)
     config_ma(app)
 
