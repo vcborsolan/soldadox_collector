@@ -22,6 +22,7 @@ class Crawler:
         }
 
         # Vai ter q dar um jeito de gerar o cookie , fudeu...
+        # aparentemente o cookie sendo valido nao importa a qtd de request ou limite de tempo ent~ao ta ok ...
 
         req = requests.get(url, headers=hdr)
 
@@ -62,30 +63,49 @@ class Crawler:
 
         return self.get_ad_by_url(url) if url != "" else self.get_ad_by_cod(cod)
 
+    def get_content(self  ,soup , status):
+
+        imgs = []
+        tmp = soup.find_all('img', class_='image')
+
+        try:
+            a = soup.find('dt', text='Categoria').findNext('a').get_text() 
+        except AttributeError:
+            a = soup.find('span' , text='Categoria').findNext('a').get_text()
+            
+        for x in tmp:
+            imgs.append(x.attrs['src'])
+
+        pub = ""
+        cod = ""
+        for x in soup.find_all('span'):
+            if "Publicado em" in x.get_text() :
+                pub = x.get_text()
+            if "cód." in x.get_text() :
+                cod = x.get_text()
+
+        ad = {
+            "value": soup.find_all('h2')[0].get_text(),
+            "publication": self.correct_time(pub),
+            "description": soup.find_all('p')[0].get_text() ,
+            "cod": cod.replace('cód. ', ''),
+            "category": a ,
+            "images": imgs,
+            "state": status['request'].url[8:10].upper(),
+            "region": status['request'].url.split('/')[3],
+            "sub-region": soup.find_all('a')[9].get_text(),
+            "url": status['request'].url
+        }
+
+        return ad
+
     def get_ad_by_cod(self, cod):
 
         status = self.status(f"https://www.olx.com.br/vi/{cod}.htm?ca=")
 
         if status['status']:
-            soup = BeautifulSoup(
-                status['request'].content, 'html.parser', from_encoding="utf-8")
-            imgs = []
-            tmp = soup.find_all('img', class_='image')
-
-            for x in tmp:
-                imgs.append(x.attrs['src'])
-            ad = {
-                "value":  soup.find('h2', class_='sc-bZQynM sc-1wimjbb-0 dSAaHC').get_text(),
-                "publication": self.correct_time(soup.find('span', class_='sc-bZQynM sc-1oq8jzc-0 dxMPwC').get_text()),
-                "description": soup.find('p', class_='sc-1kv8vxj-0 hAhJaI').get_text(),
-                "cod": soup.find('span', class_='sc-bZQynM sc-16iz3i7-0 cPAPOU').get_text().replace('cód. ', ''),
-                "category": soup.find('a', class_='sc-57pm5w-0 sc-1f2ug0x-2 dBeEuJ').get_text(),
-                "images": imgs,
-                "state": status['request'].url[8:10].upper(),
-                "region": status['request'].url.split('/')[3],
-                "sub-region": soup.find('a', class_="sc-jKJlTe sc-1aze3je-1 clkGwd").get_text(),
-                "url": status['request'].url
-            }
+            soup = BeautifulSoup(status['request'].content, 'html.parser', from_encoding="utf-8")
+            ad = self.get_content(soup , status)
 
             return ad
 
@@ -96,27 +116,8 @@ class Crawler:
 
         status = self.status(url)
         if status['status']:
-            soup = BeautifulSoup(
-                status['request'].content, 'html.parser', from_encoding="utf-8")
-            imgs = []
-            tmp = soup.find_all('img', class_='image')
-
-            for x in tmp:
-                imgs.append(x.attrs['src'])
-
-            ad = {
-                "value":  soup.find('h2', class_='sc-bZQynM sc-1wimjbb-0 dSAaHC').get_text(),
-                "publication": self.correct_time(soup.find('span', class_='sc-bZQynM sc-1oq8jzc-0 dxMPwC').get_text()),
-                "description": soup.find('p', class_='sc-1kv8vxj-0 hAhJaI').get_text(),
-                "cod": soup.find('span', class_='sc-bZQynM sc-16iz3i7-0 cPAPOU').get_text().replace('cód. ', ''),
-                "category": soup.find('a', class_='sc-57pm5w-0 sc-1f2ug0x-2 dBeEuJ').get_text(),
-                "images": imgs,
-                "state": status['request'].url[8:10].upper(),
-                "region": status['request'].url.split('/')[3],
-                "sub-region": soup.find('a', class_="sc-jKJlTe sc-1aze3je-1 clkGwd").get_text(),
-                "url": status['request'].url
-            }
-
+            soup = BeautifulSoup(status['request'].content, 'html.parser', from_encoding="utf-8")
+            ad = self.get_content(soup , status)
             return ad
 
         else:
@@ -130,4 +131,4 @@ class Crawler:
         return t
 
 # print(Crawler().get_ads(url_ini="https://olx.com.br/brasil" , itempesquisa="Guitarra" ))
-# print(Crawler().get_ad_by_cod(cod='718976086'))
+# print(Crawler().get_ad_by_cod(cod='736932129'))
