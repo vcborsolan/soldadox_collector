@@ -21,9 +21,6 @@ class Crawler:
             'Connection': 'keep-alive'
         }
 
-        # Vai ter q dar um jeito de gerar o cookie , fudeu...
-        # aparentemente o cookie sendo valido nao importa a qtd de request ou limite de tempo ent~ao ta ok ...
-
         req = requests.get(url, headers=hdr)
 
         return {'status': True, 'request': req} if req.status_code == 200 else {'status': False, 'request': req}
@@ -131,4 +128,4 @@ class Crawler:
         return t
 
 # print(Crawler().get_ads(url_ini="https://olx.com.br/brasil" , itempesquisa="Guitarra" ))
-# print(Crawler().get_ad_by_cod(cod='736932129'))
+# print(Crawler().get_ad_by_cod(cod='737858239'))

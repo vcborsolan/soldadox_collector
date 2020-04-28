@@ -30,3 +30,21 @@ class Region(db.Model):
     name = db.Column(db.String(30))
     url = db.Column(db.String(255))
     ddd_id = db.Column(db.Integer , db.ForeignKey('ddd.id'))
+   
+class Ad(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    value = db.Column(db.String(10))
+    publication = db.Column(db.String(10))
+    description = db.Column(db.String(200))
+    cod = db.Column(db.String(10))
+    category = db.Column(db.String(20))
+    state = db.Column(db.String(2))
+    region = db.Column(db.String(30))
+    subregion = db.Column(db.String(50))
+    url = db.Column(db.String(150))
+    images = db.relationship('Image' , backref='ad' , lazy='dynamic')
+
+class Image(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    ad_id = db.Column(db.Integer , db.ForeignKey('ad.id'))
+    url = db.Column(db.String(150))

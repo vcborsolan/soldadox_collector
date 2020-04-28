@@ -20,8 +20,10 @@ export FLASK_ENV=development
             >> Se o anuncio esta ativo , foi editado ou expirou baseado como parametro a url.
 
     O que a API não faz:
-        A api não armazena dados de anuncios.
         A api não retorna dados de contato cep e bairro do anunciante. 
 
 
+    Onde parei:
+
+    as apis estao funcionais , precisa agora criar o agendador de busca e o front end
  -->
