@@ -7,7 +7,7 @@ import socket
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://///home/victor/soldadox/test.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://///home/victor/Projects/soldadox/test.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['JSON_AS_ASCII'] = False
     config_db(app)
