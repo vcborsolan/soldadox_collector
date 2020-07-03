@@ -32,6 +32,7 @@ class Region(db.Model):
     ddd_id = db.Column(db.Integer , db.ForeignKey('ddd.id'))
    
 class Ad(db.Model):
+    __tablename__ = 'ad'
     id = db.Column(db.Integer, primary_key=True)
     value = db.Column(db.String(10))
     publication = db.Column(db.String(10))
@@ -42,9 +43,12 @@ class Ad(db.Model):
     region = db.Column(db.String(30))
     subregion = db.Column(db.String(50))
     url = db.Column(db.String(150))
-    images = db.relationship('Image' , backref='ad' , lazy='dynamic')
+    images = db.relationship('Image' , lazy='joined')
 
 class Image(db.Model):
+    __tablename__ = 'image'
     id = db.Column(db.Integer, primary_key=True)
     ad_id = db.Column(db.Integer , db.ForeignKey('ad.id'))
     url = db.Column(db.String(150))
+    def __repr__(self):
+        return (self.url)

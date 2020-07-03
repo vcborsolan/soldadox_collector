@@ -41,7 +41,7 @@ class Crawler:
                     links = soup.find_all(
                         "a", attrs={"data-lurker-detail": "list_id"})
                     for link in links:
-                        if link.attrs['data-lurker_list_id'] > ult_anuncio:
+                        if link.attrs['data-lurker_list_id'] > str(ult_anuncio):
                             self.ads.append(self.get_ad(
                                 url=link.attrs['href']))
                         else:
@@ -128,4 +128,4 @@ class Crawler:
         return t
 
 # print(Crawler().get_ads(url_ini="https://olx.com.br/brasil" , itempesquisa="Guitarra" ))
-# print(Crawler().get_ad_by_cod(cod='737858239'))
+# print(Crawler().get_ad_by_cod(cod='751212576'))

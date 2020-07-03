@@ -2,6 +2,7 @@ from flask import Blueprint, current_app, request, jsonify
 from .model import State, Ddd, Region  ,Ad , Image
 from .serealizer import StateSchema, DddSchema, RegionSchema , AdSchema , ImageSchema
 from .crawler import Crawler
+import time
 
 
 bp_soldadox = Blueprint('soldadox', __name__)
@@ -63,13 +64,19 @@ def crawler_api():
     }
 
     result = Crawler().get_ads(
-        url_ini=search['url_ini'], itempesquisa=search['itempesquisa'], limit_pag=search['limit_pag'] , ult_anuncio=search['ult_anuncio'])
+            url_ini=search['url_ini'],
+            itempesquisa=search['itempesquisa'],
+            limit_pag=search['limit_pag'] ,
+            ult_anuncio=search['ult_anuncio']
+        )
 
     if result != None:
 
         for x in result:
             
             salvaAd(x)
+            time.sleep(0.2)
+
         
     else:
         return f"Erro linha 75", 400
@@ -79,9 +86,9 @@ def crawler_api():
 
 @bp_soldadox.route('/api/ad/<adcode>', methods=['GET'])
 def get_ad(adcode):
+    # import ipdb; ipdb.set_trace()
 
     ad = Ad.query.filter_by(cod=adcode).first()
-
     if ad == None:
 
         result = Crawler().get_ad(cod=adcode)
@@ -90,10 +97,48 @@ def get_ad(adcode):
             return "erro anuncio nao disponivel", 400
 
         else:            
-            
-            return jsonify(result), 200 if salvaAd(result) else f"erro ao salvar anuncio", 400
 
-    return ads.jsonify(ad), 200
+            if salvaAd(result):
+
+                time.sleep(0.2)
+                return ads.jsonify(result), 200
+            else:
+                return f"erro ao salvar anuncio", 400
+            # return ads.jsonify(result), 200 if salvaAd(result) else f"erro ao salvar anuncio", 400
+            # linha 97 ate 102 deveria funcionar com a linha 103 mas n sei explicar pq falha
+    a = []
+    for x in ad.images:
+        a.append(x.url)
+    return jsonify(id= ad.id , images= a , value= ad.value , publication= ad.publication , description= ad.description , cod= ad.cod , category = ad.category , state = ad.state , region= ad.region , subregion= ad.subregion , url= ad.url),200
+
+
+@bp_soldadox.route('/cron', methods=['POST'])
+def cron_do():
+    # import ipdb; ipdb.set_trace()
+
+    print("começou o cron")
+
+    last_ad = Ad.query.order_by(Ad.id.desc()).first()
+
+    result = Crawler().get_ads(
+	    url_ini = "https://sp.olx.com.br/regiao-de-bauru-e-marilia" ,
+	    itempesquisa = "",
+	    limit_pag = 5,
+	    ult_anuncio = last_ad.cod
+    )
+
+    if result != None:
+
+        for x in result:
+            
+            salvaAd(x)
+
+        time.sleep(0.5)
+
+        return "ok",200
+
+    else:
+        return "Erro ao coletar os dados",400
 
 
 def salvaAd(result):

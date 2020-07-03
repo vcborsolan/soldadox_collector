@@ -2,6 +2,7 @@ from flask import Flask
 from flask_migrate import Migrate
 from .model import configure as config_db
 from .serealizer import configure as config_ma
+import socket
 
 
 def create_app():

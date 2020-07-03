@@ -1,0 +1,9 @@
+Flask
+uwsgi
+requests
+beautifulsoup4
+flask-sqlalchemy
+flask-migrate
+flask-marshmallow
+marshmallow-sqlalchemy
+ipdb
