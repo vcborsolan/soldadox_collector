@@ -6,6 +6,7 @@ pipenv install requests beautifulsoup4 flask flask-sqlalchemy flask-migrate flas
 export FLASK_APP=App
 export FLASK_ENV=development
 ```
+Neste Projeto é usado Sentry como gestor de logs , postman para testes e documentação.
 
 
 
