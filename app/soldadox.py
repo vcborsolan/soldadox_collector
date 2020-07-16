@@ -12,8 +12,8 @@ rs = RegionSchema()
 ads = AdSchema()
 @bp_soldadox.route('/show', methods=['GET'])
 def mostrar():
-    result_ss = State.query.all()
-    result_dds = Ddd.query.all()
+    # result_ss = State.query.all()
+    # result_dds = Ddd.query.all()
     result_rs = Region.query.all()
     print(Ad.query.all())
     return rs.jsonify(result_rs), 200

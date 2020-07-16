@@ -9,14 +9,10 @@ RUN apk add --virtual .build-dependencies \
 
 RUN apk add --no-cache pcre
 
-WORKDIR /App
-COPY /App /App
-COPY ./requirements.txt /App
-COPY /migrations migrations
-
-RUN pip install -r /app/requirements.txt
-
+WORKDIR /SOLDADOX
+COPY ./ /SOLDADOX
+RUN pip install -r requirements.txt
 RUN apk del .build-dependencies && rm -rf /var/cache/apk/*
 
-EXPOSE 5000
-CMD ["uwsgi", "--ini", "/App/wsgi.ini"]
+CMD ["gunicorn","--bind" , "0.0.0.0:5001" , "wsgi:app"]
+# gunicorn --bind 0.0.0.0:5001 wsgi:app

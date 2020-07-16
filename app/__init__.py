@@ -4,6 +4,7 @@ from .model import configure as config_db
 from .serealizer import configure as config_ma
 import sentry_sdk
 from sentry_sdk.integrations.flask import FlaskIntegration
+from .soldadox import bp_soldadox
 
 
 def create_app():
@@ -17,7 +18,11 @@ def create_app():
 
     Migrate(app , app.db)
 
-    from .soldadox import bp_soldadox
     app.register_blueprint(bp_soldadox)
 
     return app
+
+app = create_app()
+# if __name__ == "__main__":
+#     app = create_app()
+#     app.run()
