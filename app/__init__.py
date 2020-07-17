@@ -9,7 +9,7 @@ from .soldadox import bp_soldadox
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://///home/victor/Projects/soldadox/test.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../test.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['JSON_AS_ASCII'] = False
     config_db(app)
@@ -23,6 +23,3 @@ def create_app():
     return app
 
 app = create_app()
-# if __name__ == "__main__":
-#     app = create_app()
-#     app.run()
