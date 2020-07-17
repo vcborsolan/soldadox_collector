@@ -6,26 +6,26 @@ ma = Marshmallow()
 def configure(app):
     ma.init_app(app)
 
-class StateSchema(ma.ModelSchema):
+class StateSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = State
 
 
-class DddSchema(ma.ModelSchema):
+class DddSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = Ddd
 
 
-class RegionSchema(ma.ModelSchema):
+class RegionSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = Region
 
 
-class AdSchema(ma.ModelSchema):
+class AdSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = Ad
 
 
-class ImageSchema(ma.ModelSchema):
+class ImageSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = Image

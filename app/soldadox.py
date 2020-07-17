@@ -12,18 +12,20 @@ rs = RegionSchema()
 ads = AdSchema()
 @bp_soldadox.route('/show', methods=['GET'])
 def mostrar():
-    result_ss = State.query.all()
-    result_dds = Ddd.query.all()
-    result_rs = Region.query.all()[0]
+    # result_ss = State.query.all()
+    # result_dds = Ddd.query.all()
+    result_rs = Region.query.all()
+    print(Ad.query.all())
     return rs.jsonify(result_rs), 200
 
 
 @bp_soldadox.route('/cadastrar', methods=['POST'])
 def cadastrar():
     request_json = request.json
-    ss = StateSchema()
+    
     for x in request_json[0]:
-        state = ss.load(x)
+
+        state = State(initials=x['initials'], name=x['name'] , url=x['url'])
         current_app.db.session.add(state)
         current_app.db.session.commit()
     for x in request_json[1]:
@@ -114,26 +116,32 @@ def get_ad(adcode):
 
 @bp_soldadox.route('/cron', methods=['POST'])
 def cron_do():
-    # import ipdb; ipdb.set_trace()
 
     print("começou o cron")
 
-    last_ad = Ad.query.order_by(Ad.id.desc()).first()
+    last_ads = Ad.query.limit(1000).all()
+
+    cods = []
+
+    for i in last_ads:
+        cods.append(i.cod)
 
     result = Crawler().get_ads(
 	    url_ini = "https://sp.olx.com.br/regiao-de-bauru-e-marilia" ,
 	    itempesquisa = "",
-	    limit_pag = 5,
-	    ult_anuncio = last_ad.cod
+        ult_anuncio=cods ,
+	    limit_pag = 10
     )
 
     if result != None:
 
         for x in result:
             
-            salvaAd(x)
+            if (salvaAd(x) == False):
 
-        time.sleep(0.5)
+                print(f"deu erro! {x}")   
+            
+            time.sleep(0.2)
 
         return "ok",200
 
@@ -142,18 +150,26 @@ def cron_do():
 
 
 def salvaAd(result):
+
     
     try:
-        ad = Ad(value=result['value'],publication=result['publication'],description=result['description'],cod=result['cod'],category=result['category'],state=result['state'],region=result['region'],subregion=result['sub-region'],url=result['url'])
+        last_ad = Ad.query.filter(Ad.cod == result['cod']).first()
 
-        current_app.db.session.add(ad)
-        current_app.db.session.commit()
+        # import ipdb; ipdb.set_trace()
 
-        for i in result['images']:
-            image = Image(ad_id=Ad.query.filter_by(cod=result['cod']).first().id,url=i)
-            current_app.db.session.add(image)
+        if last_ad == None:
+            ad = Ad(value=result['value'],publication=result['publication'],description=result['description'],cod=result['cod'],category=result['category'],state=result['state'],region=result['region'],subregion=result['sub-region'],url=result['url'])
+
+            current_app.db.session.add(ad)
             current_app.db.session.commit()
+
+            for i in result['images']:
+                image = Image(ad_id=Ad.query.filter_by(cod=result['cod']).first().id,url=i)
+                current_app.db.session.add(image)
+                current_app.db.session.commit()
+
     except Exception as error:
-           return False
+            print(error)
+            return False
 
     return True

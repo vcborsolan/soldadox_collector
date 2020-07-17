@@ -29,6 +29,7 @@ class Crawler:
 
         i = 1
 
+        print(ult_anuncio)
         while self.loop:
             URL = f"{url_ini}?o={i}&q={itempesquisa}&sf=1"
             # import ipdb; ipdb.set_trace()
@@ -41,7 +42,7 @@ class Crawler:
                     links = soup.find_all(
                         "a", attrs={"data-lurker-detail": "list_id"})
                     for link in links:
-                        if link.attrs['data-lurker_list_id'] > str(ult_anuncio):
+                        if link.attrs['data-lurker_list_id'] not in ult_anuncio:
                             self.ads.append(self.get_ad(
                                 url=link.attrs['href']))
                         else:

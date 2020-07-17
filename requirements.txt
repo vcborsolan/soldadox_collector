@@ -1,5 +1,4 @@
 Flask
-uwsgi
 requests
 beautifulsoup4
 flask-sqlalchemy
@@ -7,3 +6,5 @@ flask-migrate
 flask-marshmallow
 marshmallow-sqlalchemy
 ipdb
+gunicorn
+sentry-sdk[flask]==0.16.0
