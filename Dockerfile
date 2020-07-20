@@ -14,5 +14,4 @@ COPY ./ /SOLDADOX
 RUN pip install -r requirements.txt
 RUN apk del .build-dependencies && rm -rf /var/cache/apk/*
 
-CMD ["gunicorn","--bind" , "0.0.0.0:5001" , "wsgi:app"]
-# gunicorn --bind 0.0.0.0:5001 wsgi:app
+CMD ["gunicorn","--bind" , "0.0.0.0:5001" , "wsgi:app" , "--timeout","1200"]
