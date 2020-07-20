@@ -45,9 +45,6 @@ class Crawler:
                         if link.attrs['data-lurker_list_id'] not in ult_anuncio:
                             self.ads.append(self.get_ad(
                                 url=link.attrs['href']))
-                        else:
-                            self.loop = False
-                            break
 
                     i += 1
                 else:

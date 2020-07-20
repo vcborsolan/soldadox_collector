@@ -141,8 +141,6 @@ def cron_do():
 
                 print(f"deu erro! {x}")   
             
-            time.sleep(0.2)
-
         return "ok",200
 
     else:
@@ -154,8 +152,6 @@ def salvaAd(result):
     
     try:
         last_ad = Ad.query.filter(Ad.cod == result['cod']).first()
-
-        # import ipdb; ipdb.set_trace()
 
         if last_ad == None:
             ad = Ad(value=result['value'],publication=result['publication'],description=result['description'],cod=result['cod'],category=result['category'],state=result['state'],region=result['region'],subregion=result['sub-region'],url=result['url'])
