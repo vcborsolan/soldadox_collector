@@ -34,6 +34,7 @@ class Region(db.Model):
 class Ad(db.Model):
     __tablename__ = 'ad'
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100))
     value = db.Column(db.String(10))
     publication = db.Column(db.String(10))
     description = db.Column(db.String(200))

@@ -7,4 +7,5 @@ flask-marshmallow
 marshmallow-sqlalchemy
 ipdb
 gunicorn
+psycopg2
 sentry-sdk[flask]==0.16.0
