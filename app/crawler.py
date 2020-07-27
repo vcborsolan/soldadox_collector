@@ -29,10 +29,8 @@ class Crawler:
 
         i = 1
 
-        print(ult_anuncio)
         while self.loop:
             URL = f"{url_ini}?o={i}&q={itempesquisa}&sf=1"
-            # import ipdb; ipdb.set_trace()
             if i <= limit_pag:
                 status = self.status(URL)
                 # ^ "https://www.olx.com.br/brasil?o=2&q=guitarra&sf=1"  o=pagina | q=query | sf= ordenação da pagina 1>> mais recente
@@ -79,8 +77,12 @@ class Crawler:
             if "cód." in x.get_text() :
                 cod = x.get_text()
 
+        # import ipdb; ipdb.set_trace()
+
+
         ad = {
             "value": soup.find_all('h2')[0].get_text(),
+            "title": soup.find_all('h1')[0].get_text(),
             "publication": self.correct_time(pub),
             "description": soup.find_all('p')[0].get_text() ,
             "cod": cod.replace('cód. ', ''),
@@ -122,8 +124,13 @@ class Crawler:
 
         t = str.replace("Publicado em ", "").replace(
             " às ", f"/{datetime.now().year} ")
-        # t = datetime.strptime(t ,"%d/%m/%Y %H:%M")
         return t
 
 # print(Crawler().get_ads(url_ini="https://olx.com.br/brasil" , itempesquisa="Guitarra" ))
 # print(Crawler().get_ad_by_cod(cod='751212576'))
+result = Crawler().get_ads(
+	    url_ini = "https://sp.olx.com.br/regiao-de-bauru-e-marilia" ,
+	    itempesquisa = "",
+	    limit_pag = 2
+    )
+print(result)
