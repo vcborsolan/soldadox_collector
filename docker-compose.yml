@@ -1,7 +1,7 @@
 version: '3'
 services:
     db:
-        image: postgres:10-alpine
+        image: postgres:12-alpine
         restart: always
         environment: 
             POSTGRES_USER: admin
@@ -9,6 +9,8 @@ services:
             POSTGRES_DB: default_db
         ports:
             - 54320:5432
+        volumes:
+            - postgres_data:/var/lib/postgresql/data/
 
     adminer:
         image: adminer
@@ -19,13 +21,14 @@ services:
           - 8080:8080
 
     web:
-      build: .
-      depends_on: 
+        build: .
+        depends_on: 
             - db
             - adminer
-        valumes:
-            - .:/code
-      ports:
+        volumes:
+            - .:/SOLDADOX
+        ports:
         - "5001:5001"
 
-            
+volumes:
+    postgres_data:
