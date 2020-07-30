@@ -35,10 +35,10 @@ class Ad(db.Model):
     __tablename__ = 'ad'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100))
-    value = db.Column(db.String(10))
-    publication = db.Column(db.String(10))
+    value = db.Column(db.String(20))
+    publication = db.Column(db.String(20))
     description = db.Column(db.String(200))
-    cod = db.Column(db.String(10))
+    cod = db.Column(db.String(20))
     category = db.Column(db.String(20))
     state = db.Column(db.String(2))
     region = db.Column(db.String(30))
