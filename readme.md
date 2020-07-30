@@ -1,5 +1,8 @@
 ![Logo do projeto](https://github.com/vcborsolan/soldadox/blob/master/logo.png)
 
+[Como instalar](#como-instalar)
+[Features](#features)
+
 ## O que é este projeto?
 
 
@@ -7,21 +10,36 @@ Soldadox colector é um microserviço dedicado para coleta de dados provindos da
 
 
 ## O que o projeto usa? 
-Neste Projeto é usado Sentry como gestor de logs , beautifilsoup4 para os crawlers , flask como frameworkweb , docker para deploy.
+Neste Projeto é usado Sentry como gestor de logs , beautifilsoup4 para os crawlers , flask como frameworkweb , postgresql como bd e docker para deploy e gerenciamento de containers.
 
 ## Como instalar?
 
 1. Clonar o projeto :
 
+	```sh
     $ https://github.com/vcborsolan/soldadox.git
+	```
 
-2. O projeto todo esta dockerizado , para tanto então temos de buildar a imagem com:
+2. O projeto todo esta dockerizado incluisive com compose, para tanto então temos de apenas mandar rodar as imagens com:
 
-    $ docker build -t 'image_name' .
+	```sh
+    $ docker-compose up -d
+	```
 
-3. Rodar o container com:
+3. Precisamos migrar os dados então vamos entrar no container 'web' com:
 
-    $ docker run -p 5001:5001 test_flask:latest
+	```sh
+	$ docker exec -it 'container_web' /bin/sh
+	```
+
+4. Estando no shell digitaremos 3 comandos:
+
+	```sh
+	$ flask db init && flask db migrate && flask db upgrade
+	```
+
+5. Por ultimo fazer uma requesiçao GET com a rota /cadastrar com o seed.json como parametro.
+
 
 ## Features:
 
