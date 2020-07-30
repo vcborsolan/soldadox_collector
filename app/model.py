@@ -35,15 +35,15 @@ class Ad(db.Model):
     __tablename__ = 'ad'
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100))
-    value = db.Column(db.String(20))
-    publication = db.Column(db.String(20))
+    value = db.Column(db.String(50))
+    publication = db.Column(db.String(50))
     description = db.Column(db.String(1000))
-    cod = db.Column(db.String(20))
-    category = db.Column(db.String(20))
+    cod = db.Column(db.String(50))
+    category = db.Column(db.String(50))
     state = db.Column(db.String(2))
     region = db.Column(db.String(50))
     subregion = db.Column(db.String(50))
-    url = db.Column(db.String(150))
+    url = db.Column(db.String(1000))
     images = db.relationship('Image' , lazy='joined')
 
 class Image(db.Model):
