@@ -128,9 +128,9 @@ class Crawler:
 
 # print(Crawler().get_ads(url_ini="https://olx.com.br/brasil" , itempesquisa="Guitarra" ))
 # print(Crawler().get_ad_by_cod(cod='751212576'))
-result = Crawler().get_ads(
-	    url_ini = "https://sp.olx.com.br/regiao-de-bauru-e-marilia" ,
-	    itempesquisa = "",
-	    limit_pag = 2
-    )
-print(result)
+# result = Crawler().get_ads(
+# 	    url_ini = "https://sp.olx.com.br/regiao-de-bauru-e-marilia" ,
+# 	    itempesquisa = "",
+# 	    limit_pag = 2
+#     )
+# print(result)
