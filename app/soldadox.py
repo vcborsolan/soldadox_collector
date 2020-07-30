@@ -106,8 +106,7 @@ def get_ad(adcode):
                 return ads.jsonify(result), 200
             else:
                 return f"erro ao salvar anuncio", 400
-            # return ads.jsonify(result), 200 if salvaAd(result) else f"erro ao salvar anuncio", 400
-            # linha 97 ate 102 deveria funcionar com a linha 103 mas n sei explicar pq falha
+
     a = []
     for x in ad.images:
         a.append(x.url)
@@ -154,7 +153,7 @@ def salvaAd(result):
         last_ad = Ad.query.filter(Ad.cod == result['cod']).first()
 
         if last_ad == None:
-            ad = Ad(value=result['value'],publication=result['publication'],description=result['description'],cod=result['cod'],category=result['category'],state=result['state'],region=result['region'],subregion=result['sub-region'],url=result['url'])
+            ad = Ad(value=result['value'], title=result['title'],publication=result['publication'],description=result['description'],cod=result['cod'],category=result['category'],state=result['state'],region=result['region'],subregion=result['sub-region'],url=result['url'])
 
             current_app.db.session.add(ad)
             current_app.db.session.commit()
