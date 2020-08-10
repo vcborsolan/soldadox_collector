@@ -19,18 +19,18 @@ class SoldadoxPipeline:
     def process_item(self, item, spider):
 
         try:
-
+            categ = self.correct_category(item['category'])
             if "category" in item:
-                self.db[correct_category(item['category'])].insert(dict(item))
+                self.db[categ].insert(dict(item))
 
         except Exception as ex:
             self.db['errors'].insert(dict(ex))
 
         return item
 
-    def correct_category(string):
+    def correct_category(self , string):
         string = string.replace(" ","_")
-        string = string.replace(",","_")
+        string = string.replace(",","")
         string = string.replace("á","a")
         string = string.replace("ã","a")
         string = string.replace("ó","o")
@@ -39,3 +39,6 @@ class SoldadoxPipeline:
         string = string.replace("é","e")
         string = string.replace("ç","c")
         string = string.replace("í","i")
+        string = string.replace("Á","A")
+        string = string.replace("Ô","O")
+        return string
