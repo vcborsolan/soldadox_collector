@@ -36,7 +36,7 @@ class Ad(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100))
     value = db.Column(db.String(50))
-    publication = db.Column(db.String(50))
+    publication = db.Column(db.Text())
     description = db.Column(db.String(1000))
     cod = db.Column(db.String(50))
     category = db.Column(db.String(50))
