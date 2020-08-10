@@ -1,4 +1,4 @@
-![Logo do projeto](https://github.com/vcborsolan/soldadox/blob/master/logo.png)
+![Logo do projeto](https://github.com/vcborsolan/soldadox_collector/blob/master/logo.png)
 
 [Como instalar](#como-instalar)
 [Features](#features)
