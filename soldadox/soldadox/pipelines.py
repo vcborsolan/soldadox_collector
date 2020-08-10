@@ -18,7 +18,12 @@ class SoldadoxPipeline:
 
     def process_item(self, item, spider):
 
-        if "category" in item:
-            self.db[item['category'].replace(" ","_")].insert(dict(item))
+        try:
+
+            if "category" in item:
+                self.db[item['category'].replace(" ","_")].insert(dict(item))
+
+        except Exception as ex:
+            self.db['errors'].insert(dict(ex))
 
         return item
