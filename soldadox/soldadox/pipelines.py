@@ -21,9 +21,21 @@ class SoldadoxPipeline:
         try:
 
             if "category" in item:
-                self.db[item['category'].replace(" ","_")].insert(dict(item))
+                self.db[correct_category(item['category'])].insert(dict(item))
 
         except Exception as ex:
             self.db['errors'].insert(dict(ex))
 
         return item
+
+    def correct_category(string):
+        string = string.replace(" ","_")
+        string = string.replace(",","_")
+        string = string.replace("á","a")
+        string = string.replace("ã","a")
+        string = string.replace("ó","o")
+        string = string.replace("õ","o")
+        string = string.replace("ú","u")
+        string = string.replace("é","e")
+        string = string.replace("ç","c")
+        string = string.replace("í","i")
